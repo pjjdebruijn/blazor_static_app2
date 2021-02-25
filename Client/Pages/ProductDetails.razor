@@ -68,6 +68,7 @@ else
         if (ProductId == 0)
         {
             product = new Product();
+
         }
         else
         {
@@ -85,11 +86,13 @@ else
     {
         if (product.Id == 0)
         {
-            await http.PostAsJsonAsync("api/products", product);
+            //await http.PostAsJsonAsync("api/products", product);
+            await http.PutAsJsonAsync("api/products", product);
         }
         else
         {
-            await http.PutAsJsonAsync("api/products", product);
+            //await http.PutAsJsonAsync("api/products", product);
+            await http.PostAsJsonAsync("api/products", product);
         }
         navigation.NavigateTo("/");
     }
